@@ -1,0 +1,1 @@
+create database AirBnB_test;
