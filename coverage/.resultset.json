@@ -23,6 +23,11 @@
           null,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          1,
           1,
           1,
           1,
@@ -38,12 +43,21 @@
           null,
           null,
           null,
-          null,
           1,
           1,
           null,
           null,
           1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
           null,
           1,
           0,
@@ -51,8 +65,39 @@
           null,
           null
         ]
+      },
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/spaces_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/lib/spaces.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1637062970
+    "timestamp": 1637064546
   }
 }

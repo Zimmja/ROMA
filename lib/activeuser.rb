@@ -2,10 +2,15 @@
 
 require 'pg'
 
+# This manages the sign-up process and the properties of the active user
 class ActiveUser
   @@user_id = nil
   DATABASE = ''
   TABLE = 'Users'
+  COLUMN0 = 'ID'
+  COLUMN1 = 'username'
+  COLUMN2 = 'password'
+  COLUMN3 = 'email'
 
   class << self
 
@@ -13,8 +18,7 @@ class ActiveUser
       if DATABASE == ''
         @@user_id = 1
       else
-        @@user_id = connection.exec_params("INSERT INTO #{TABLE} (username,password,email) 
-      VALUES ($1,$2,$3) RETURNING ID", [username, password, email])
+        @@user_id = create(username, password, email)
       end
     end
 
@@ -22,7 +26,17 @@ class ActiveUser
       @@user_id
     end
 
+    def username
+      return 'none' if @@user_id.nil?
+      connection.query("SELECT * FROM #{TABLE} WHERE #{COLUMN0} = #{@@user_id};").first["#{COLUMN1}"]
+    end
+
     private
+
+    def create(user, pword, mail)
+      connection.exec_params("INSERT INTO #{TABLE} (#{COLUMN1},#{COLUMN2},#{COLUMN3}) 
+      VALUES ($1,$2,$3) RETURNING #{COLUMN0}", [user,pword,mail])
+    end
 
     def connection
       PG.connect(dbname: "#{DATABASE}#{'_test' if ENV['ENVIRONMENT'] == 'test'}")
