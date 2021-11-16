@@ -10,7 +10,7 @@ require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'set_up_test_db.rb'
- Capybara.app = Roma
+Capybara.app = Roma
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
 SimpleCov.start

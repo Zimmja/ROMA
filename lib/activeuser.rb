@@ -7,9 +7,9 @@ class ActiveUser
   @@user_id = nil
   @@database_installed = false
 
-  DATABASE = 'Roma'
-  TABLE = 'Users'
-  COLUMN0 = 'ID'
+  DATABASE = 'airbnb'
+  TABLE = 'users'
+  COLUMN0 = 'id'
   COLUMN1 = 'username'
   COLUMN2 = 'password'
   COLUMN3 = 'email'
