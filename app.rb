@@ -14,11 +14,11 @@ class Roma < Sinatra::Base
 
   get '/' do
     p ENV
-    @username = ActiveUser.username
     erb(:index)
   end
 
-  #get '/spaces' do
+
+  post '/spaces' do
   #  p ENV
   #  @spaces = Spaces[blah_user_id_blah].all #work in progress
   #  erb :'spaces'
