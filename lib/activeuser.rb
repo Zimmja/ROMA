@@ -4,14 +4,22 @@ require 'pg'
 
 class ActiveUser
   @@user_id = nil
-  DATABASE = 'Roma'
+  DATABASE = ''
   TABLE = 'Users'
+
   class << self
 
     def signup(username, password, email)
-        connection.exec_params("INSERT INTO #{TABLE} (username,password,email) 
-        VALUES ($1,$2,$3) RETURNING ID", [username, password, email])
-  
+      if DATABASE == ''
+        @@user_id = 1
+      else
+        @@user_id = connection.exec_params("INSERT INTO #{TABLE} (username,password,email) 
+      VALUES ($1,$2,$3) RETURNING ID", [username, password, email])
+      end
+    end
+
+    def id
+      @@user_id
     end
 
     private
