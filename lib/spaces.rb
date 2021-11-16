@@ -2,7 +2,6 @@
 
 # Spaces are specific to users
 class Space
-  @@database_installed = false
 
   DATABASE = 'airbnb'
   TABLE = 'spaces'
@@ -24,10 +23,12 @@ class Space
     private
 
     def add_to_table(user, name, bedrooms)
-      return 12 if !@@database_installed
       connection.exec_params("INSERT INTO #{TABLE} (#{COLUMN1},#{COLUMN2},#{COLUMN3}) 
       VALUES ($1,$2,$3) RETURNING #{COLUMN0}", [name,bedrooms,user])
     end
 
+    def connection
+      PG.connect(dbname: "#{DATABASE}#{'_test' if ENV['ENVIRONMENT'] == 'test'}")
+    end
   end
 end

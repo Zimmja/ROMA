@@ -5,7 +5,6 @@ require 'pg'
 # This manages the sign-up process and the properties of the active user
 class ActiveUser
   @@user_id = nil
-  @@database_installed = false
 
   DATABASE = 'airbnb'
   TABLE = 'users'
@@ -17,11 +16,7 @@ class ActiveUser
   class << self
 
     def signup(username, password, email)
-      if @@database_installed
-        @@user_id = create(username, password, email)
-      else
-        @@user_id = 1
-      end
+      @@user_id = (create(username, password, email)).first['id']
     end
 
     def id
@@ -36,8 +31,8 @@ class ActiveUser
     private
 
     def create(user, pword, mail)
-      connection.exec_params("INSERT INTO #{TABLE} (#{COLUMN1},#{COLUMN2},#{COLUMN3}) 
-      VALUES ($1,$2,$3) RETURNING #{COLUMN0}", [user,pword,mail])
+      connection.exec_params("INSERT INTO users (username,password,email) 
+      VALUES ($1,$2,$3) RETURNING id", [user,pword,mail])
     end
 
     def connection
