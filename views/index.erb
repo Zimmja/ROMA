@@ -1,3 +1,9 @@
 <h1>"Welcome to ROMA AirBnB"</h1>
 
 current user: <%= @username %>
+
+<form action="/add" method="post">
+  Name: <input type="text" name="name">
+  Bedrooms: <input type="text" name="bedrooms">
+  <input type="submit" value="enter">
+</form>

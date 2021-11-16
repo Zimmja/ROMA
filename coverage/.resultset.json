@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/do/ROMA/ROMA/spec/activeuser_spec.rb": {
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/activeuser_spec.rb": {
         "lines": [
           null,
           null,
@@ -17,25 +17,25 @@
           null
         ]
       },
-      "/Users/do/ROMA/ROMA/spec/features/features_add_spec.rb": {
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/features_add_spec.rb": {
         "lines": [
           1,
           null,
+          1,
+          1,
+          1,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null
         ]
       },
-      "/Users/do/ROMA/ROMA/spec/spaces_spec.rb": {
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/spaces_spec.rb": {
         "lines": [
           null,
           null,
@@ -58,6 +58,6 @@
         ]
       }
     },
-    "timestamp": 1637081656
+    "timestamp": 1637082761
   }
 }

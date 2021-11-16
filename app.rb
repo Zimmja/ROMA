@@ -30,6 +30,11 @@ class Roma < Sinatra::Base
  #   Spaces.create(title: params[:title], url: params[:url])
  #   redirect '/spaces'
  # end
+
+  post '/add' do
+    Space.create(ActiveUser.id, params[:name], params[:bedrooms])
+    redirect '/'
+  end
   
   # start the server if ruby file executed directly
  # run! if app_file == $0
