@@ -5,7 +5,9 @@ require 'pg'
 # This manages the sign-up process and the properties of the active user
 class ActiveUser
   @@user_id = nil
-  DATABASE = ''
+  @@database_installed = false
+
+  DATABASE = 'Roma'
   TABLE = 'Users'
   COLUMN0 = 'ID'
   COLUMN1 = 'username'
@@ -15,10 +17,10 @@ class ActiveUser
   class << self
 
     def signup(username, password, email)
-      if DATABASE == ''
-        @@user_id = 1
-      else
+      if @@database_installed
         @@user_id = create(username, password, email)
+      else
+        @@user_id = 1
       end
     end
 
