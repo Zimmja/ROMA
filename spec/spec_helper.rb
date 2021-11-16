@@ -9,13 +9,16 @@ require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
-# require 'tests/test_helpers'
-# Capybara.app = Roma
+require 'set_up_test_db.rb'
+ Capybara.app = Roma
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
 SimpleCov.start
 
 RSpec.configure do |config|
+  config.before(:each) do
+    set_test
+  end
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
