@@ -4,9 +4,9 @@
 class Space
   @@database_installed = false
 
-  DATABASE = ''
-  TABLE = 'Spaces'
-  COLUMN0 = 'ID'
+  DATABASE = 'airbnb'
+  TABLE = 'spaces'
+  COLUMN0 = 'id'
   COLUMN1 = 'name'
   COLUMN2 = 'bedrooms'
   COLUMN3 = 'fk_user'

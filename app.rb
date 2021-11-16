@@ -2,8 +2,8 @@
 # Empty file
 require 'sinatra/base'
 require 'sinatra/reloader'
-#require './lib/users'
-#require './lib/spaces'
+require './lib/activeuser'
+require './lib/spaces'
 
 
 class Roma < Sinatra::Base
@@ -14,6 +14,7 @@ class Roma < Sinatra::Base
 
   get '/' do
     p ENV
+    @username = ActiveUser.username
     erb(:index)
   end
 
