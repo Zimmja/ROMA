@@ -6,8 +6,18 @@
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
 </head>
 <body>
-<h1> "Welcome to ROMA AirBnB" </h1>
+<h1> "Welcome to ROMA BnB!" </h1>
 current user: <%= @username %>
+  
+<h2> Existing user? </h2>
+<form  action="/spaces" method = "post>
+    <label> for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd">
+      <input type="submit" value="Submit">
+</form>
+<a href="/signup">New User?</a>
     
 </body>
 </html>
