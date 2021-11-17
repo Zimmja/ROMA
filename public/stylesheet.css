@@ -6,4 +6,20 @@ h1 {
     margin-left: 0;
     margin-right: 0;
     font-weight: bold;
+    color: #483d8b;
+}
+
+body {
+    text-align: center;
+    background-color: cadetblue;
+
+}
+
+head {
+    background-color: darkblue;
+    text-align: center;
+}
+
+title {
+    background-color: darkblue;
 }

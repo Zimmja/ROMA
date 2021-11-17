@@ -5,8 +5,8 @@ require 'sinatra/reloader'
 require './lib/activeuser'
 require './lib/spaces'
 
-
 class Roma < Sinatra::Base
+  # set :public, 'public'
   configure :development do
     register Sinatra::Reloader
   end
