@@ -9,4 +9,11 @@ describe ActiveUser do
       expect(ActiveUser.id).to eq id_value
     end
   end
+
+  describe '.logout' do
+    it 'sets @@user_id to nil' do
+      ActiveUser.logout
+      expect(ActiveUser.id).to eq nil
+    end
+  end
 end

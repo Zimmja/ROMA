@@ -7,11 +7,6 @@ class ActiveUser
   @@user_id = nil
 
   DATABASE = 'airbnb'
-  TABLE = 'users'
-  COLUMN0 = 'id'
-  COLUMN1 = 'username'
-  COLUMN2 = 'password'
-  COLUMN3 = 'email'
 
   class << self
 
@@ -23,16 +18,19 @@ class ActiveUser
       @@user_id
     end
 
+    def logout
+      @@user_id = nil
+    end
+
     def username
       return 'none' if @@user_id.nil?
-      connection.query("SELECT * FROM #{TABLE} WHERE #{COLUMN0} = #{@@user_id};").first["#{COLUMN1}"]
+      connection.query("SELECT * FROM users WHERE id = #{@@user_id};").first['username']
     end
 
     private
 
     def create(user, pword, mail)
-      connection.exec_params("INSERT INTO users (username,password,email) 
-      VALUES ($1,$2,$3) RETURNING id", [user,pword,mail])
+      connection.exec_params("INSERT INTO users (username,password,email) VALUES ($1,$2,$3) RETURNING id", [user,pword,mail])
     end
 
     def connection
