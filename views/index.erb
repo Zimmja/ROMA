@@ -8,18 +8,18 @@
 <body>
 <h1> "Welcome to ROMA BnB!" </h1>
 current user: <%= @username %>
+<a href="/signup">Sign up</a>
 <% if @username != 'none' %>
   <a href="/logout">Logout</a>
 <% else %>
-<h2> Existing user? </h2>
+<h3> Existing user? </h3>
 <form  action="/spaces" method = "post>
     <label> for="username">Username:</label><br>
     <input type="text" id="username" name="username"><br>
     <label for="pwd">Password:</label><br>
     <input type="password" id="pwd" name="pwd">
-      <input type="submit" value="Submit">
+    <input type="submit" value="Submit">
 </form>
-<a href="/signup">New User?</a>
 <% end %>
 
 # Fill out this form to add a new space

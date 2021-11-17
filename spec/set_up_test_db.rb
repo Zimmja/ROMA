@@ -4,6 +4,8 @@ def setup_test_tables
   TestSetup.new
 end
 
+# I've set up the tests this way so that when new users are created, their generated IDs
+# are stored in an array. We can then access this array for ID values when running tests in rspec
 class TestSetup
   attr_reader :user_id_ints
   def initialize
@@ -14,6 +16,7 @@ class TestSetup
   end
 
   def setup_tables
+    puts
     puts "Setting up test tables for #{db_name} database: #{connection}"
     connection.exec( "TRUNCATE users CASCADE; TRUNCATE spaces" )
     populate_users_table(users_vals)
