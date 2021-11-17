@@ -23,6 +23,11 @@ class Roma < Sinatra::Base
     erb(:signup)
   end
 
+  get '/logout' do
+    ActiveUser.logout
+    redirect to '/'
+  end
+
   post '/signup/new' do
     ActiveUser.signup(params[:username], params[:pwd], params[:email])
     @username = params[:username]

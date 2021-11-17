@@ -8,7 +8,9 @@
 <body>
 <h1> "Welcome to ROMA BnB!" </h1>
 current user: <%= @username %>
-  
+<% if @username != 'none' %>
+  <a href="/logout">Logout</a>
+<% else %>
 <h2> Existing user? </h2>
 <form  action="/spaces" method = "post>
     <label> for="username">Username:</label><br>
@@ -18,6 +20,7 @@ current user: <%= @username %>
       <input type="submit" value="Submit">
 </form>
 <a href="/signup">New User?</a>
+<% end %>
 
 # Fill out this form to add a new space
 <form action="/add" method="post">
