@@ -18,6 +18,20 @@ current user: <%= @username %>
       <input type="submit" value="Submit">
 </form>
 <a href="/signup">New User?</a>
-    
+
+# Fill out this form to add a new space
+<form action="/add" method="post">
+  Name: <input type="text" name="name">
+  Bedrooms: <input type="text" name="bedrooms">
+  <input type="submit" value="enter">
+</form>
+
+# Lists all available spaces on the site
+<% @spaces.each do |space| %>
+    <li>
+      name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>
+    </li>
+<% end %>
+                                    
 </body>
 </html>
