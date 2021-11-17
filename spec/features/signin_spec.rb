@@ -12,6 +12,13 @@ feature 'Sign-up' do
 end
 
 feature 'Login' do
-
+  scenario 'Users can sign-up' do
+    visit('/')
+    click_link('Login')
+    fill_in 'username', with: 'Tony Stark'
+    fill_in 'pwd', with: 'ironman'
+    click_button('Submit')
+    expect(page).to have_content 'user: Tony Stark'
+  end
 end
  

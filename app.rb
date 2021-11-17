@@ -11,7 +11,6 @@ class Roma < Sinatra::Base
     register Sinatra::Reloader
   end
 
-
   get '/' do
     p ENV['ENVIRONMENT']
     @username = ActiveUser.username
@@ -28,10 +27,19 @@ class Roma < Sinatra::Base
     redirect to '/'
   end
 
+  get '/login' do
+    erb(:login)
+  end
+
   post '/signup/new' do
     ActiveUser.signup(params[:username], params[:pwd], params[:email])
     redirect to '/'
   end 
+
+  post '/login/new' do
+    ActiveUser.request_login(params[:username], params[:pwd])
+    redirect to '/'
+  end
 
   get '/spaces' do
     @username = ActiveUser.username

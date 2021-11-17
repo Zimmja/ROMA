@@ -4,23 +4,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roma</title>
     <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+
+  <style>
+  .logged_in {
+    <% if @username != 'none' %> 
+    visibility: visible;
+    <% else %>
+    visibility: hidden;
+    <% end %>
+  }
+  .logged_out {
+    <% if @username == 'none' %> 
+    visibility: visible;
+    <% else %>
+    visibility: hidden;
+    <% end %>
+  }
+  </style>
+
 </head>
 <body>
-<h1> "Welcome to ROMA BnB!" </h1>
-current user: <%= @username %>
-<a href="/signup">Sign up</a>
-<% if @username != 'none' %>
-  <a href="/logout">Logout</a>
-<% else %>
-<h3> Existing user? </h3>
-<form  action="/spaces" method = "post>
-    <label> for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="pwd">Password:</label><br>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
-</form>
-<% end %>
+<h1> Welcome to ROMA BnB </h1>
+Current user: <%= @username %><br>
+<a href="/logout" class="logged_in">Logout</a><br>
+<a href="/signup" class="logged_out">Sign up</a><br>
+<a href="/login" class="logged_out">Login</a><br>
+<br>
 
 # Fill out this form to add a new space
 <form action="/add" method="post">
