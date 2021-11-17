@@ -5,8 +5,8 @@ require 'sinatra/reloader'
 require './lib/activeuser'
 require './lib/spaces'
 
-
 class Roma < Sinatra::Base
+  # set :public, 'public'
   configure :development do
     register Sinatra::Reloader
   end
@@ -19,17 +19,27 @@ class Roma < Sinatra::Base
     erb(:index)
   end
 
-  #get '/spaces' do
-  #  p ENV
-  #  @spaces = Spaces[blah_user_id_blah].all #work in progress
-  #  erb :'spaces'
-  #end
+  get '/signup' do
+    erb(:signup)
+  end
+
+  post '/signup/new' do
+    ActiveUser.signup(params[:username], params[:pwd], params[:email])
+    @username = params[:username]
+    redirect to '/spaces'
+  end 
+
+
+  get '/spaces' do
+    @username = ActiveUser.username
+    erb(:spaces)
+  end
 
  # post '/addspace' do
  #   p params[:name]
  #   p params[:fk_user]
  #   Spaces.create(title: params[:title], url: params[:url])
- #   redirect '/spaces'
+ #   redirect '/
  # end
 
   post '/add' do

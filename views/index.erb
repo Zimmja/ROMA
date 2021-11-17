@@ -1,16 +1,37 @@
-<h1>"Welcome to ROMA AirBnB"</h1>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roma</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+</head>
+<body>
+<h1> "Welcome to ROMA BnB!" </h1>
 current user: <%= @username %>
+  
+<h2> Existing user? </h2>
+<form  action="/spaces" method = "post>
+    <label> for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd">
+      <input type="submit" value="Submit">
+</form>
+<a href="/signup">New User?</a>
 
+# Fill out this form to add a new space
 <form action="/add" method="post">
   Name: <input type="text" name="name">
   Bedrooms: <input type="text" name="bedrooms">
   <input type="submit" value="enter">
 </form>
 
+# Lists all available spaces on the site
 <% @spaces.each do |space| %>
     <li>
       name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>
     </li>
-  <% end %>
-  
+<% end %>
+                                    
+</body>
+</html>
