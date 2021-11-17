@@ -12,8 +12,8 @@ class Space
     @name = name
     @bedrooms = bedrooms
     @hostname = hostname
-    @descrition = description
-    @price_per_night = prices_per_night
+    @description = description
+    @prices_per_night = prices_per_night
   end
 
   class << self

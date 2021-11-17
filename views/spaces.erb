@@ -3,7 +3,6 @@ table, th, td {
   border:1px solid black;
 }
 </style>
-
 <h1> Welcome <%= @username%> </h1>
 
  <h3> Fill out this form to add a new space </h3>
@@ -22,16 +21,19 @@ table, th, td {
     <th>Name</th>
     <th>Bedrooms</th>
     <th>Description</th>
-    <th>Price-per-Night <th>
+    <th>Prices-per-Night <th>
   </tr>
   <% @spaces.each do |space| %>
-  <tr>
-    <td> <%= space.name %> </td>
-    <td> <%= space.bedrooms %> </td>
-    <td> <%= space.description %> </td>
-    <td> <%= space.prices_per_night%> </td>
-  </tr>
+    <% if space.hostname == @username %>
+      <tr>
+        <td> <%= space.name %> </td>
+        <td> <%= space.bedrooms %> </td>
+        <td> <%= space.description %> </td>
+        <td> <%= space.prices_per_night%> </td>
+      </tr>
+    <% end %>
   <% end %>
+  
 </table>
 
 

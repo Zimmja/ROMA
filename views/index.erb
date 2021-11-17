@@ -27,6 +27,24 @@ current user: <%= @username %>
 
 <% end %>
 
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Bedrooms</th>
+    <th>Description</th>
+    <th>Prices-per-Night </th>
+    <th> Host Name </th> 
+  </tr>
+  <% @spaces.each do |space| %>
+  <tr>
+    <td> <%= space.name %> </td>
+    <td> <%= space.bedrooms %> </td>
+    <td> <%= space.description %> </td>
+    <td> <%= space.prices_per_night%> </td>
+    <td> <%= space.hostname%> </td>
+  </tr>
+  <% end %>
+</table>
 
 
 
