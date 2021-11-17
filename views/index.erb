@@ -35,21 +35,24 @@ Current user: <%= @username %><br>
 <form action="/add" method="post">
   Name: <input type="text" name="name">
   Bedrooms: <input type="text" name="bedrooms">
-  <input type="submit" value="enter">
+  <input type="submit" value="enter" name="add_space">
 </form>
 
+<br><h3> Available spaces </h3>
 <% @spaces.each do |space| %>
     <li>
       name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>, id: <%= space.id %>
       <form action="/tbc" method="post">
-      <input type="hidden" name="name" value=<%= space.name %>>
-      <input type="hidden" name="bedrooms" value=<%= space.bedrooms %>>
-      <input type="hidden" name="hostname" value=<%= space.hostname %>>
-      <input type="hidden" name="id" value=<%= space.id %>>
+      <input type="hidden" id=<%= "#{space.name}_id" %> name="name" value=<%= space.name %>>
+      <input type="hidden" id=<%= "#{space.bedrooms}_id" %> name="bedrooms" value=<%= space.bedrooms %>>
+      <input type="hidden" id=<%= "#{space.hostname}_id" %> name="hostname" value=<%= space.hostname %>>
+      <input type="hidden" id=<%= "#{space.id}_id" %> name="id" value=<%= space.id %>>
       <input type="submit" value="Make a booking">
 </form>
     </li>
 <% end %>
+
+<br><h3> Your bookings </h3>
                                     
 </body>
 </html>
