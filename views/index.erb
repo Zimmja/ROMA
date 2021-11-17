@@ -1,9 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>ROMA AirBnB</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roma</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
 </head>
-
-<h1> Welcome to ROMA BnB! </h1>
-
+<body>
+<h1> "Welcome to ROMA BnB!" </h1>
+current user: <%= @username %>
+  
 <h2> Existing user? </h2>
 <form  action="/spaces" method = "post>
     <label> for="username">Username:</label><br>
@@ -12,5 +17,7 @@
     <input type="password" id="pwd" name="pwd">
       <input type="submit" value="Submit">
 </form>
-
 <a href="/signup">New User?</a>
+    
+</body>
+</html>
