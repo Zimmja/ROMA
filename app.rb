@@ -41,6 +41,11 @@ class Roma < Sinatra::Base
     redirect to '/'
   end
 
+  post '/booking' do
+    @space = ActiveSpace.set_user(params[:id])
+    erb(:booking)
+  end
+
   get '/spaces' do
     @username = ActiveUser.username
     erb(:spaces)
