@@ -38,10 +38,16 @@ Current user: <%= @username %><br>
   <input type="submit" value="enter">
 </form>
 
-# Lists all available spaces on the site
 <% @spaces.each do |space| %>
     <li>
-      name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>
+      name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>, id: <%= space.id %>
+      <form action="/tbc" method="post">
+      <input type="hidden" name="name" value=<%= space.name %>>
+      <input type="hidden" name="bedrooms" value=<%= space.bedrooms %>>
+      <input type="hidden" name="hostname" value=<%= space.hostname %>>
+      <input type="hidden" name="id" value=<%= space.id %>>
+      <input type="submit" value="Make a booking">
+</form>
     </li>
 <% end %>
                                     
