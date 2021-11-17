@@ -5,8 +5,6 @@ class Space
 
   DATABASE = 'airbnb'
 
-  
-
   attr_reader :name, :bedrooms, :hostname
   def initialize(name, bedrooms, hostname)
     @name = name
@@ -16,7 +14,7 @@ class Space
 
   class << self
     def create(user_id, name, bedrooms)
-      fail 'User not logged in' if user_id.nil?
+      fail 'User not logged in' if (user_id.nil? || invalid_id?(user_id))
       add_to_table(user_id, name, bedrooms)
     end
 
@@ -38,6 +36,10 @@ class Space
 
     private
 
+    def invalid_id?(user_id)
+      (connection.query("SELECT * FROM users WHERE id = '#{user_id}'")).first.nil?
+    end
+
     def add_to_table(user, name, bedrooms)
       connection.exec_params("INSERT INTO spaces (name,bedrooms,fk_user) 
       VALUES ($1,$2,$3) RETURNING id", [name,bedrooms,user])
@@ -48,6 +50,4 @@ class Space
     end
   end
 end
-
-
   
