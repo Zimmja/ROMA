@@ -19,7 +19,12 @@ class Roma < Sinatra::Base
     erb(:index)
   end
 
-  get '/signup' do
+  get '/signup/host' do
+    @new_host = TRUE
+    erb(:signup)
+  end
+
+  get '/signup/guest' do
     erb(:signup)
   end
 
@@ -28,12 +33,17 @@ class Roma < Sinatra::Base
     redirect to '/'
   end
 
-  post '/signup/new' do
+  post '/signup/host/new' do
     ActiveUser.signup(params[:username], params[:pwd], params[:email])
     @username = params[:username]
     redirect to '/spaces'
   end 
 
+  post '/signup/guest/new' do
+    Guest.signup(params[:username], params[:pwd], params[:email])
+    @username = params[:username]
+    redirect to '/'
+  end 
 
   get '/spaces' do
     @username = ActiveUser.username
