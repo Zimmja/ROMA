@@ -11,7 +11,7 @@ class ActiveUser
   class << self
 
     def signup(username, password, email)
-      @@user_id = (create(username, password, email)).first['id']
+      login((create(username, password, email)).first['id'])
     end
 
     def id
@@ -20,6 +20,10 @@ class ActiveUser
 
     def logout
       @@user_id = nil
+    end
+
+    def login(user_id)
+      @@user_id = user_id
     end
 
     def username

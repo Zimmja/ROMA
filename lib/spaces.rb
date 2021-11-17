@@ -4,11 +4,8 @@
 class Space
 
   DATABASE = 'airbnb'
-  TABLE = 'spaces'
-  COLUMN0 = 'id'
-  COLUMN1 = 'name'
-  COLUMN2 = 'bedrooms'
-  COLUMN3 = 'fk_user'
+
+  
 
   attr_reader :name, :bedrooms, :hostname
   def initialize(name, bedrooms, hostname)
@@ -42,8 +39,8 @@ class Space
     private
 
     def add_to_table(user, name, bedrooms)
-      connection.exec_params("INSERT INTO #{TABLE} (#{COLUMN1},#{COLUMN2},#{COLUMN3}) 
-      VALUES ($1,$2,$3) RETURNING #{COLUMN0}", [name,bedrooms,user])
+      connection.exec_params("INSERT INTO spaces (name,bedrooms,fk_user) 
+      VALUES ($1,$2,$3) RETURNING id", [name,bedrooms,user])
     end
 
     def connection
@@ -51,3 +48,6 @@ class Space
     end
   end
 end
+
+
+  

@@ -13,7 +13,7 @@ class Roma < Sinatra::Base
 
 
   get '/' do
-    p ENV
+    p ENV['ENVIRONMENT']
     @username = ActiveUser.username
     @spaces = Space.all_objects
     erb(:index)
