@@ -7,3 +7,10 @@ current user: <%= @username %>
   Bedrooms: <input type="text" name="bedrooms">
   <input type="submit" value="enter">
 </form>
+
+<% @spaces.each do |space| %>
+    <li>
+      name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>
+    </li>
+  <% end %>
+  

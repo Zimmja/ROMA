@@ -15,6 +15,7 @@ class Roma < Sinatra::Base
   get '/' do
     p ENV
     @username = ActiveUser.username
+    @spaces = Space.all_objects
     erb(:index)
   end
 
