@@ -34,7 +34,7 @@ class ActiveUser
 
     def username
       return 'none' if @@user_id.nil?
-      connection.query("SELECT * FROM users WHERE id = #{@@user_id};").first['username']
+      connection.exec("SELECT * FROM users WHERE id = #{@@user_id};").first['username']
     end
 
     private

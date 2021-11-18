@@ -1,4 +1,10 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/signup.css">
+</head>
+<body>
   <div style='border: 3px dashed red'>
+
   <%if @new_host == true %>
     <h2> New Host? Sign up: </h2>
     <form  action="/signup/host/new" method = "post">
@@ -22,4 +28,3 @@
       <input type="submit" value="Submit">
     </form>
   <% end %>
-
