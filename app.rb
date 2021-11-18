@@ -20,6 +20,7 @@ class Roma < Sinatra::Base
     else
       @username = Guest.username
     end
+    @new_host = (ActiveUser.id.to_i > 0)
     @spaces = Space.all_objects
     erb(:index)
   end
