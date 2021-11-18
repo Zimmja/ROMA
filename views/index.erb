@@ -21,11 +21,20 @@
     visibility: hidden;
     <% end %>
   }
+
+  #white_box {
+    background-color:rgba(255,255,255,0.85);
+    margin: auto;
+    width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+  }
   </style>
 </head>
 
 <body>
 
+<div id="white_box">
 <h1> Welcome to ROMA BnB </h1>
 Current user: <%= @username %><br>
 <a href="/logout" class="logged_in">Logout</a><br>
@@ -57,6 +66,8 @@ Current user: <%= @username %><br>
   </tr>
   <% end %>
 </table>
-                               
+
+<br><h3> Bookings </h3>
+</div>                  
 </body>
 </html>

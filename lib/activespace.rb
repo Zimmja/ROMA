@@ -38,7 +38,12 @@ class ActiveSpace
     end
 
     def book_space(space_id, user_id, host_id, start_date, nights)
+      connection.exec_params("INSERT INTO bookings (space_id, user_id, host_id, start_date, nights) values($1,$2,$3,$4,$5) RETURNING id;",
+      [space_id, user_id, host_id, start_date, nights])
+    end
 
+    def connection
+      PG.connect(dbname: "airbnb#{'_test' if ENV['ENVIRONMENT'] == 'test'}")
     end
   end
 end
