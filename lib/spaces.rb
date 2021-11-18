@@ -2,7 +2,7 @@ class Space
 
   DATABASE = 'airbnb'
 
-  attr_reader :name, :bedrooms, :id :hostname, :description, :prices_per_night
+  attr_reader :name, :bedrooms, :id, :hostname, :description, :prices_per_night
   def initialize(name, bedrooms, id, hostname, description, prices_per_night)
     @name = name
     @bedrooms = bedrooms

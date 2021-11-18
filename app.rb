@@ -21,7 +21,7 @@ class Roma < Sinatra::Base
   end
 
   get '/login/host' do
-    @host_login = TRUE
+    @host_login = true
     erb(:login)
   end
 
@@ -30,7 +30,7 @@ class Roma < Sinatra::Base
   end
 
   get '/signup/host' do
-    @new_host = TRUE
+    @new_host = true
     erb(:signup)
   end
 
@@ -45,7 +45,7 @@ class Roma < Sinatra::Base
 
   post '/login/host/new' do
     ActiveUser.request_login(params[:username], params[:pwd])
-    redirect to '/spaces'
+    redirect to '/host/spaces'
   end
 
   post '/login/guest/new' do
@@ -65,8 +65,9 @@ class Roma < Sinatra::Base
     redirect to '/'
   end 
 
-  get '/spaces' do
+  get '/host/spaces' do
     @username = ActiveUser.username
+    @spaces = Space.all_objects
     erb(:spaces)
   end
 
@@ -77,9 +78,9 @@ class Roma < Sinatra::Base
  #   redirect '/
  # end
 
-  post '/add' do
+  post '/host/spaces/add' do
     Space.create(ActiveUser.id, params[:name], params[:bedrooms])
-    redirect to '/'
+    redirect to '/host/spaces'
   end
   
   # start the server if ruby file executed directly
