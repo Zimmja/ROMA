@@ -1,5 +1,20 @@
-
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
 <h1> Welcome <%= @username%> </h1>
+
+ <h3> Fill out this form to add a new space </h3>
+<form action="/add" method="post">
+  Name: <input type="text" name="name">
+  Bedrooms: <input type="text" name="bedrooms">
+  Description: <input type="text" name="description">
+  Prices-per-Night <input type="text" name="prices_per_night">
+  <input type="submit" value="enter">
+</form>
+
+
 <table style="width:100%">
   <tr>
     <th>Name</th>
@@ -19,4 +34,6 @@
   <% end %>
   
 </table>
+
+<a href='/'> Back to homepage </a>
 

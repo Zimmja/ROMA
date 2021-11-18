@@ -20,7 +20,7 @@ class Guest
     end
 
     def logout
-      @@user_id = nil
+      @@guest_id = nil
     end
 
     def login(guest_id)

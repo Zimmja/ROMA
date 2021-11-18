@@ -15,7 +15,11 @@ class Roma < Sinatra::Base
 
   get '/' do
     p ENV['ENVIRONMENT']
-    @username = ActiveUser.username
+    unless ActiveUser.username == 'none'
+      @username = ActiveUser.username
+    else
+      @username = Guest.username
+    end
     @spaces = Space.all_objects
     erb(:index)
   end
@@ -39,7 +43,11 @@ class Roma < Sinatra::Base
   end
 
   get '/logout' do
-    ActiveUser.logout
+    unless ActiveUser.username == 'none'
+      ActiveUser.logout
+    else
+      Guest.logout
+    end
     redirect to '/'
   end
 
