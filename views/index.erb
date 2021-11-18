@@ -23,6 +23,31 @@ current user: <%= @username %>
 
 <% end %>
 
+<<h3> Available Spaces </h3>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Bedrooms</th>
+    <th>Description</th>
+    <th>Prices-per-Night</th>
+    <th>Host Name</th>
+    <th>Book</th>
+  </tr>
+  <% @spaces.each do |space| %>
+  <tr>
+    <td> <%= space.name %> </td>
+    <td> <%= space.bedrooms %> </td>
+    <td> <%= space.description %> </td>
+    <td> <%= space.prices_per_night%> </td>
+    <td> <%= space.hostname%> </td>
+    <td> <form method="post" action=<%= "/booking" %>>
+      <input type="hidden" name="id" value=<%= space.id %>>
+      <input type="submit" name=<%= "#{space.name}_button" %> value="Make a booking">
+     </form> </td>
+  </tr>
+  <% end %>
+</table>
+
 
                                     
 </body>
