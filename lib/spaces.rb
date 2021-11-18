@@ -2,8 +2,8 @@ class Space
 
   DATABASE = 'airbnb'
 
-  attr_reader :name, :bedrooms, :hostname, :description, :prices_per_night
-  def initialize(name, bedrooms, hostname, description, prices_per_night)
+  attr_reader :name, :bedrooms, :id :hostname, :description, :prices_per_night
+  def initialize(name, bedrooms, id, hostname, description, prices_per_night)
     @name = name
     @bedrooms = bedrooms
     @id = id
@@ -27,7 +27,8 @@ class Space
     end
 
     def create_object(space)
-      Space.new(space['name'], space['bedrooms'], find_owner_username(space['fk_user']), space['description'], space['prices_per_night'])
+      Space.new(space['name'], space['bedrooms'], space['id'],
+        find_owner_username(space['fk_user']), space['description'], space['prices_per_night'])
     end
 
     def find_owner_username(host_id)
