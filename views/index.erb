@@ -27,13 +27,22 @@
 <body>
 
 <h1> Welcome to ROMA BnB </h1>
-Current user: <%= @username %><br>
-<a href="/logout" class="logged_in">Logout</a><br>
-<a href="/signup" class="logged_out">Sign up</a><br>
-<a href="/login" class="logged_out">Login</a><br>
-<br>
+Current user: <%= @username %>
 
-<br><h3> Spaces </h3>
+<a href="/logout" class="logged_in">Logout</a>
+
+<div style='border: 3px solid red'>
+  <a href="/login/host" class="logged_out"> Login as Host </a> 
+  <a href="/signup/host" class="logged_out"> Like to sign up as Host?</a>
+</div>
+
+<div style="border: 3px solid blue;">
+<a href="/login/guest" class="logged_out"> Login as Guest </a>
+<a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
+</div>
+
+
+<<h3> Available Spaces </h3>
 <table style="width:100%">
   <tr>
     <th>Name</th>
@@ -57,6 +66,7 @@ Current user: <%= @username %><br>
   </tr>
   <% end %>
 </table>
-                               
+                            
 </body>
+
 </html>

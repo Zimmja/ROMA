@@ -1,6 +1,3 @@
-# frozen_string_literal: true
-
-# Spaces are specific to users
 class Space
 
   DATABASE = 'airbnb'
@@ -30,7 +27,7 @@ class Space
     end
 
     def create_object(space)
-      Space.new(space['name'], space['bedrooms'], space['id'], 
+      Space.new(space['name'], space['bedrooms'], space['id'],
         find_owner_username(space['fk_user']), space['description'], space['prices_per_night'])
     end
 
