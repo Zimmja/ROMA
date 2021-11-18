@@ -7,15 +7,16 @@ describe ActiveSpace do
   user_ids = connection.query('SELECT id FROM spaces').map { |row| row['id']}
   mansion_id = user_ids.first
 
+  let(:testspace) { ActiveSpace.new(mansion_id) }
+
   describe '.set_space' do
     it 'Sets the ActiveUser with new values' do
-      ActiveSpace.set_space(mansion_id)
-      expect(ActiveSpace.name).to eq 'Stark Mansion'
-      expect(ActiveSpace.bedrooms).to eq '8'
-      expect(ActiveSpace.id).to eq mansion_id
-      expect(ActiveSpace.description).to eq 'A mansion'
-      expect(ActiveSpace.prices_per_night).to eq '$50000'
-      expect(ActiveSpace.hostname).to eq 'Tony Stark'
+      expect(testspace.name).to eq 'Stark Mansion'
+      expect(testspace.bedrooms).to eq '8'
+      expect(testspace.id).to eq mansion_id
+      expect(testspace.description).to eq 'A mansion'
+      expect(testspace.prices_per_night).to eq '$50000'
+      expect(testspace.hostname).to eq 'Tony Stark'
     end
   end
 end

@@ -3,6 +3,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/activeuser'
+require './lib/activespace'
 require './lib/spaces'
 
 class Roma < Sinatra::Base
@@ -41,9 +42,19 @@ class Roma < Sinatra::Base
     redirect to '/'
   end
 
-  post '/booking' do
-    @space = ActiveSpace.set_space(params[:id])
+  post '/booking/post' do
+    ActiveSpace.set_space(params[:id])
+    redirect to '/booking'
+  end
+
+  get '/booking' do
+    @space = ActiveSpace.new(ActiveSpace.id)
     erb(:booking)
+  end
+
+  post '/booking/complete' do
+    ActiveSpace.book_space(params[:spaceid], ActiveUser.id, params[:hostid], params[:startdate], params[:days])
+    redirect to '/'
   end
 
   get '/spaces' do

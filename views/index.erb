@@ -50,7 +50,7 @@ Current user: <%= @username %><br>
     <td> <%= space.description %> </td>
     <td> <%= space.prices_per_night%> </td>
     <td> <%= space.hostname%> </td>
-    <td> <form method="post" action=<%= "/booking" %>>
+    <td> <form method="post" action=<%= "/booking/post" %>>
       <input type="hidden" name="id" value=<%= space.id %>>
       <input type="submit" name=<%= "#{space.name}_button" %> value="Book">
      </form> </td>
