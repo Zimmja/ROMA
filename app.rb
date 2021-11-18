@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/activeuser'
 require './lib/spaces'
+require './lib/guests'
 
 class Roma < Sinatra::Base
   # set :public, 'public'

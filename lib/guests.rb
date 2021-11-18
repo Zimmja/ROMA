@@ -23,7 +23,7 @@ class Guest
       @@user_id = nil
     end
 
-    def login(user_id)
+    def login(guest_id)
       @@guest_id = guest_id
     end
 
