@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Roma</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/index.css">
 
   <style>
   .logged_in {
@@ -21,9 +22,10 @@
     <% end %>
   }
   </style>
-
 </head>
+
 <body>
+
 <h1> Welcome to ROMA BnB </h1>
 Current user: <%= @username %><br>
 <a href="/logout" class="logged_in">Logout</a><br>
@@ -31,25 +33,30 @@ Current user: <%= @username %><br>
 <a href="/login" class="logged_out">Login</a><br>
 <br>
 
-# Fill out this form to add a new space
-<form action="/add" method="post">
-  Name: <input type="text" name="name">
-  Bedrooms: <input type="text" name="bedrooms">
-  <input type="submit" value="enter" name="add_space">
-</form>
-
-<br><h3> Available spaces </h3>
-<% @spaces.each do |space| %>
-    <li>
-      name: <%= space.name %>, bedroom: <%= space.bedrooms %>, host: <%= space.hostname %>
-      <form method="post" action=<%= "/booking" %>>
+<br><h3> Your bookings </h3>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Bedrooms</th>
+    <th>Description</th>
+    <th>Prices-per-Night</th>
+    <th>Host Name</th>
+    <th>Book</th>
+  </tr>
+  <% @spaces.each do |space| %>
+  <tr>
+    <td> <%= space.name %> </td>
+    <td> <%= space.bedrooms %> </td>
+    <td> <%= space.description %> </td>
+    <td> <%= space.prices_per_night%> </td>
+    <td> <%= space.hostname%> </td>
+    <td> <form method="post" action=<%= "/booking" %>>
       <input type="hidden" name="id" value=<%= space.id %>>
       <input type="submit" name=<%= "#{space.name}_button" %> value="Make a booking">
-      </form>
-    </li>
-<% end %>
-
-<br><h3> Your bookings </h3>
-                                    
+     </form> </td>
+  </tr>
+  <% end %>
+</table>
+                               
 </body>
 </html>

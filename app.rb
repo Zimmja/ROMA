@@ -48,12 +48,13 @@ class Roma < Sinatra::Base
 
   get '/spaces' do
     @username = ActiveUser.username
+    @spaces = Space.all_objects
     erb(:spaces)
   end
 
   post '/add' do
-    Space.create(ActiveUser.id, params[:name], params[:bedrooms])
-    redirect to '/'
+    Space.create(ActiveUser.id, params[:name], params[:bedrooms], params[:description], params[:prices_per_night])
+    redirect to '/spaces'
   end
   
   # start the server if ruby file executed directly

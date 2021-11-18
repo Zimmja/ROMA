@@ -1,4 +1,3 @@
-
 feature 'Sign-up' do
   scenario 'Users can sign-up' do
     visit('/')
