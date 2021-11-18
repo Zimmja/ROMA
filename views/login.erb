@@ -1,7 +1,19 @@
-<form  action="/login/new" method = "post">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="pwd">Password:</label><br>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
-</form>
+<%if @host_login == true %>
+    <h2> Login as Host </h2>
+    <form  action="/login/host/new" method = "post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd">
+        <input type="submit" value="Submit">
+    </form>
+<%else%>
+    <h2> Login as Guest </h2>
+    <form  action="/login/guest/new" method = "post">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="pwd">Password:</label><br>
+        <input type="password" id="pwd" name="pwd">
+        <input type="submit" value="Submit">
+    </form>
+<% end %>
