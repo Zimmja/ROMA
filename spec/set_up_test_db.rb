@@ -7,12 +7,14 @@ end
 # I've set up the tests this way so that when new users are created, their generated IDs
 # are stored in an array. We can then access this array for ID values when running tests in rspec
 class TestSetup
-  attr_reader :user_id_ints
+  attr_reader :user_id_ints, :space_id_ints
   def initialize
     @user_id_ints = []
+    @space_id_ints = []
     setup_users
     setup_spaces
-    puts print "User IDs added: #{@user_id_ints}"
+    puts "User IDs added: #{@user_id_ints}"
+    puts "Space IDs added: #{@space_id_ints}"
     puts
   end
 
@@ -27,6 +29,7 @@ class TestSetup
     values.each do |space|
       user_row = connection.exec_params("INSERT INTO spaces (name, bedrooms, fk_user, description, prices_per_night) values($1,$2,$3,$4,$5) RETURNING id;",
       [space[:name],space[:bedrooms],space[:fk_user],space[:description],space[:prices_per_night]]) # Broken over two lines to ease readability
+      @space_id_ints << user_row.first['id']
     end
   end
 

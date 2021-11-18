@@ -17,7 +17,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Forma
 SimpleCov.start
 
 RSpec.configure do |config|
-  # setup_test_tables
+  setup_test_tables
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

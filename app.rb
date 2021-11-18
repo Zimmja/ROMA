@@ -42,7 +42,7 @@ class Roma < Sinatra::Base
   end
 
   post '/booking' do
-    @space = ActiveSpace.set_user(params[:id])
+    @space = ActiveSpace.set_space(params[:id])
     erb(:booking)
   end
 
