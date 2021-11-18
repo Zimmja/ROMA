@@ -20,6 +20,7 @@ class Roma < Sinatra::Base
   end
 
   get '/login/host' do
+    @host_login = TRUE
     erb(:login)
   end
 
