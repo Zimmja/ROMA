@@ -26,6 +26,7 @@ class Roma < Sinatra::Base
 
   get '/login/guest' do
     erb(:login)
+  end
 
   get '/signup/host' do
     @new_host = TRUE
@@ -38,6 +39,16 @@ class Roma < Sinatra::Base
 
   get '/logout' do
     ActiveUser.logout
+    redirect to '/'
+  end
+
+  post '/login/host/new' do
+    ActiveUser.request_login(params[:username], params[:pwd])
+    redirect to '/spaces'
+  end
+
+  post '/login/guest/new' do
+    Guest.request_login(params[:username], params[:pwd])
     redirect to '/'
   end
 
@@ -71,5 +82,5 @@ class Roma < Sinatra::Base
   end
   
   # start the server if ruby file executed directly
- # run! if app_file == $0
+  # run! #if app_file == $0
 end

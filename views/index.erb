@@ -12,27 +12,13 @@ current user: <%= @username %>
   <a href="/logout">Logout</a>
 <% else %>
 <div style='border: 3px solid red'>
-  <h2> Existing Host? </h2>
-  <form  action="/spaces" method = "post">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="pwd">Password:</label><br>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
-  </form>
+  <a href="/login/host"> Login as Host </a> 
   <a href="/signup/host"> Like to sign up as Host?</a>
 </div>
 
 <div style="border: 3px solid blue;">
-  <h2> Existing Guest? </h2>
-  <form  action="/spaces" method = "post">
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="pwd">Password:</label><br>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
-  </form>
-  <a href="/signup/guest"> Like to sign up as Guest? </a> 
+<a href="/login/guest"> Login as Guest </a>
+<a href="/signup/guest"> Like to sign up as Guest? </a> 
 </div>
 
 <% end %>
