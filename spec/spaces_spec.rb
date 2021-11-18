@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'spaces'
-require 'activeuser'
 
 describe Space do
   user_ids = setup_test_tables.user_id_ints

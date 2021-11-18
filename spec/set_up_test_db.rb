@@ -10,12 +10,39 @@ class TestSetup
   attr_reader :user_id_ints
   def initialize
     @user_id_ints = []
-    setup_tables
+    setup_users
+    setup_spaces
     puts print "User IDs added: #{@user_id_ints}"
     puts
   end
 
-  def setup_tables
+  #-------------------------------------
+  # SET UP SPACES
+  #-------------------------------------
+  def setup_spaces
+    populate_space_table(space_vals)
+  end
+
+  def populate_space_table(values)
+    values.each do |space|
+      user_row = connection.exec_params("INSERT INTO spaces (name, bedrooms, fk_user, description, prices_per_night) values($1,$2,$3,$4,$5) RETURNING id;",
+      [space[:name],space[:bedrooms],space[:fk_user],space[:description],space[:prices_per_night]]) # Broken over two lines to ease readability
+    end
+  end
+
+  def space_vals
+    [ { :name => 'Stark Mansion', :bedrooms => '8', :fk_user => @user_id_ints[0], 
+      :description => "A mansion", :prices_per_night => '$50000' },
+      { :name => 'New Avengers', :bedrooms => '50', :fk_user => @user_id_ints[1], 
+        :description => 'Training', :prices_per_night => '$120' },
+      { :name => 'Trailer', :bedrooms => '1', :fk_user => @user_id_ints[2], 
+        :description => 'Very private', :prices_per_night => '$70' }, ]
+  end
+
+  #-------------------------------------
+  # SET UP USERS
+  #-------------------------------------
+  def setup_users
     puts
     puts "Setting up test tables for #{db_name} database: #{connection}"
     connection.exec( "TRUNCATE users CASCADE; TRUNCATE spaces" )
