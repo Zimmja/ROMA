@@ -19,6 +19,13 @@ class Roma < Sinatra::Base
     erb(:index)
   end
 
+  get '/login/host' do
+    erb(:login)
+  end
+
+  get '/login/guest' do
+    erb(:login)
+
   get '/signup/host' do
     @new_host = TRUE
     erb(:signup)
