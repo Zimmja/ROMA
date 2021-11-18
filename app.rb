@@ -83,7 +83,7 @@ class Roma < Sinatra::Base
   end
 
   post '/booking/complete' do
-    ActiveSpace.book_space(params[:spaceid], ActiveUser.id, params[:hostid], params[:startdate], params[:days])
+    ActiveSpace.book_space(params[:spaceid], Guest.id, params[:hostid], params[:startdate], params[:days])
     redirect to '/'
   end
 
