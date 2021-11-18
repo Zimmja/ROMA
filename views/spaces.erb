@@ -6,7 +6,7 @@ table, th, td {
 <h1> Welcome <%= @username%> </h1>
 
  <h3> Fill out this form to add a new space </h3>
-<form action="/add" method="post">
+<form action="/host/spaces/add" method="post">
   Name: <input type="text" name="name">
   Bedrooms: <input type="text" name="bedrooms">
   Description: <input type="text" name="description">

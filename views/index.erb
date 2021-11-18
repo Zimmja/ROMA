@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Roma</title>
-    <link rel="stylesheet" type="text/css" href="/index.css">
+  <title>Roma</title>
+  <link rel="stylesheet" type="text/css" href="/index.css">
 
   <style>
   .logged_in {
@@ -38,20 +38,21 @@
 <h1> Welcome to ROMA BnB </h1>
 Current user: <%= @username %>
 
-<a href="/logout" class="logged_in">Logout</a>
+<br><a href="/logout" class="logged_in">Logout</a>
 
 <div style='border: 3px solid red'>
   <a href="/login/host" class="logged_out"> Login as Host </a> 
-  <a href="/signup/host" class="logged_out"> Like to sign up as Host?</a>
+  <br><a href="/signup/host" class="logged_out"> Like to sign up as Host?</a>
 </div>
 
 <div style="border: 3px solid blue;">
-<a href="/login/guest" class="logged_out"> Login as Guest </a>
-<a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
+  <a href="/login/guest" class="logged_out"> Login as Guest </a>
+  <br><a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
 </div>
 
+<a href="/host/spaces">Add a space</a><br>
 
-<<h3> Available Spaces </h3>
+<h3> Available Spaces </h3>
 <table style="width:100%">
   <tr>
     <th>Name</th>
