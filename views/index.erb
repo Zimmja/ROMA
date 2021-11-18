@@ -50,7 +50,9 @@ Current user: <%= @username %>
   <br><a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
 </div>
 
+<%if @new_host == true %>
 <a href="/host/spaces">Add a space</a><br>
+<% end %>
 
 <h3> Available Spaces </h3>
 <table style="width:100%">
