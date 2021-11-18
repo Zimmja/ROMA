@@ -1,7 +1,59 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/do/ROMA/ROMA/spec/activeuser_spec.rb": {
+
+        "lines": [
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/lib/activespace.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/activeuser_spec.rb": {
         "lines": [
           null,
           null,
@@ -25,19 +77,28 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
           1,
           null,
           null,
           1,
           1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/book_spec.rb": {
+        "lines": [
           1,
           null,
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -48,31 +109,45 @@
           1,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
         ]
       },
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/signin_spec.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+
+          null
+        ]
+      },
       "/Users/do/ROMA/ROMA/spec/features/signin_spec.rb": {
         "lines": [
+
           1,
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0,
           null,
           null,
           null
@@ -87,13 +162,18 @@
           null,
           1,
           1,
+          null,
+          1,
           1,
           2,
           null,
           null,
           1,
+          2,
+          null,
+          null,
           1,
-          1,
+          4,
           4,
           null,
           null,
@@ -101,6 +181,6 @@
         ]
       }
     },
-    "timestamp": 1637159875
+    "timestamp": 1637190368
   }
 }
