@@ -79,15 +79,9 @@ class Roma < Sinatra::Base
     erb(:spaces)
   end
 
- # post '/addspace' do
- #   p params[:name]
- #   p params[:fk_user]
- #   Spaces.create(title: params[:title], url: params[:url])
- #   redirect '/
- # end
 
   post '/host/spaces/add' do
-    Space.create(ActiveUser.id, params[:name], params[:bedrooms])
+    Space.create(ActiveUser.id, params[:name], params[:bedrooms], params[:description], params[:prices_per_night])
     redirect to '/host/spaces'
   end
   
