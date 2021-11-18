@@ -6,7 +6,7 @@ I would like to sign-up to ROMA
 
 As a user
 So that potential guests can see my spaces
-I would like to list a new space
+I would like to add a new space
 
 As a user
 So that all my spaces can be seen
@@ -16,11 +16,31 @@ As a user
 So potential guests can see what my spaces are called
 I want to list my spaces' names
 
+```
+Wednesday lunchtime: MVP complete. 
 
-ADDITIONAL STORIES
+Next stages:
+
+```
+LEYE AND DILAN:
 As a user
-So potential guests can see when my spaces are available
-I want to list my spaces' availability
+So I can enjoy using the app
+I would like the app to be designed
+```
+
+```
+MATT:
+
+As a user
+So I can keep track of my account
+I would like to log in and log out
+
+```
+- Amend the testing environment and pass all rspec tests
+- Extract login / logout / sign-up to a new page
+
+```
+ROSHAN:
 
 As a user
 So potential guests can see how much my space costs
@@ -30,13 +50,20 @@ As a user
 So potential guests can see important information about my space
 I want to list my spaces' descriptions
 
+```
+- Extract adding a space to a new page
+
+
+
+```
+ADDITIONAL STORIES
+As a user
+So potential guests can see when my spaces are available
+I want to list my spaces' availability
+
 As a not-signed-up user
 So I can't accidentally request a booking without my details
 I don't want to be able to make a request unless signed up
-
-As a not-signed-up user
-So I can request a booking with my details
-I want to be able to sign up
 
 As a guest
 So I can make a booking
