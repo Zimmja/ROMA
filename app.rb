@@ -12,7 +12,6 @@ class Roma < Sinatra::Base
     register Sinatra::Reloader
   end
 
-
   get '/' do
     p ENV['ENVIRONMENT']
     unless ActiveUser.username == 'none'
@@ -63,8 +62,7 @@ class Roma < Sinatra::Base
 
   post '/signup/host/new' do
     ActiveUser.signup(params[:username], params[:pwd], params[:email])
-    @username = params[:username]
-    redirect to '/spaces'
+    redirect to '/'
   end 
 
   post '/signup/guest/new' do
@@ -73,21 +71,19 @@ class Roma < Sinatra::Base
     redirect to '/'
   end 
 
+  post '/booking' do
+    @space = ActiveSpace.set_user(params[:id])
+    erb(:booking)
+  end
+
   get '/host/spaces' do
     @username = ActiveUser.username
     @spaces = Space.all_objects
     erb(:spaces)
   end
 
- # post '/addspace' do
- #   p params[:name]
- #   p params[:fk_user]
- #   Spaces.create(title: params[:title], url: params[:url])
- #   redirect '/
- # end
-
   post '/host/spaces/add' do
-    Space.create(ActiveUser.id, params[:name], params[:bedrooms])
+    Space.create(ActiveUser.id, params[:name], params[:bedrooms], params[:description], params[:prices_per_night])
     redirect to '/host/spaces'
   end
   

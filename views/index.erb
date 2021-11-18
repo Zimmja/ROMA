@@ -2,26 +2,45 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Roma</title>
-    <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="/index.css">
+
+  <style>
+  .logged_in {
+    <% if @username != 'none' %> 
+    visibility: visible;
+    <% else %>
+    visibility: hidden;
+    <% end %>
+  }
+  .logged_out {
+    <% if @username == 'none' %> 
+    visibility: visible;
+    <% else %>
+    visibility: hidden;
+    <% end %>
+  }
+  </style>
 </head>
+
 <body>
-<h1> "Welcome to ROMA BnB!" </h1>
-current user: <%= @username %>
-<% if @username != 'none' %>
-  <a href="/logout">Logout</a>
-<% else %>
+
+<h1> Welcome to ROMA BnB </h1>
+Current user: <%= @username %>
+
+<a href="/logout" class="logged_in">Logout</a>
+
 <div style='border: 3px solid red'>
-  <a href="/login/host"> Login as Host </a> 
-  <a href="/signup/host"> Like to sign up as Host?</a>
+  <a href="/login/host" class="logged_out"> Login as Host </a> 
+  <a href="/signup/host" class="logged_out"> Like to sign up as Host?</a>
 </div>
 
 <div style="border: 3px solid blue;">
-<a href="/login/guest"> Login as Guest </a>
-<a href="/signup/guest"> Like to sign up as Guest? </a> 
+<a href="/login/guest" class="logged_out"> Login as Guest </a>
+<a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
 </div>
 
-<% end %>
 
 <<h3> Available Spaces </h3>
 <table style="width:100%">
@@ -47,8 +66,7 @@ current user: <%= @username %>
   </tr>
   <% end %>
 </table>
-
-
-                                    
+                            
 </body>
+
 </html>
