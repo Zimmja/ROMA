@@ -4,7 +4,8 @@ require 'spaces'
 require 'activeuser'
 
 describe Space do
-  user_ids = setup_test_tables.user_id_ints
+  connection = PG.connect(dbname: "airbnb#{'_test' if ENV['ENVIRONMENT'] == 'test'}")
+  user_ids = connection.query('SELECT id FROM users').map { |row| row['id']}
 
   describe '.create' do
     it 'fails if the passed in user ID is nil' do
@@ -18,10 +19,9 @@ describe Space do
     end
 
     it 'creates a new space if a valid user ID is passed' do
+      ActiveUser.request_login('Tony Stark', 'ironman')
       expect { Space.create(user_ids[0], 'Stark Tower', '300', 
         'Highrise in central Manhatten', '$2000') }.to change { Space.all.count }.by(1)
-      expect { Space.create(user_ids[4], 'Asgard', '10000', 
-        'Another planet entirely', '$50000') }.to change { Space.all.count }.by(1)
     end
   end
 end

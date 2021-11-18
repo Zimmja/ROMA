@@ -8,44 +8,20 @@
           1,
           null,
           1,
+          1,
+          4,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/lib/activespace.rb": {
-        "lines": [
+          2,
           null,
           1,
           1,
-          null,
-          null,
           1,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
           null,
           null,
           null
@@ -91,7 +67,6 @@
       "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/book_spec.rb": {
         "lines": [
           1,
-          null,
           null,
           null,
           null,
@@ -153,6 +128,7 @@
           null,
           1,
           1,
+          6,
           null,
           1,
           1,
@@ -166,8 +142,7 @@
           null,
           null,
           1,
-          2,
-          2,
+          1,
           2,
           2,
           null,
@@ -176,6 +151,6 @@
         ]
       }
     },
-    "timestamp": 1637234667
+    "timestamp": 1637252149
   }
 }
