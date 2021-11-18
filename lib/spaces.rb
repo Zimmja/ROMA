@@ -1,16 +1,13 @@
-# frozen_string_literal: true
-
-# Spaces are specific to users
 class Space
 
   DATABASE = 'airbnb'
 
-  
 
-  attr_reader :name, :bedrooms, :hostname, :description, :prices_per_night
-  def initialize(name, bedrooms, hostname, description, prices_per_night)
+  attr_reader :name, :bedrooms, :id, :hostname, :description, :prices_per_night
+  def initialize(name, bedrooms, id, hostname, description, prices_per_night)
     @name = name
     @bedrooms = bedrooms
+    @id = id
     @hostname = hostname
     @description = description
     @prices_per_night = prices_per_night
@@ -18,7 +15,7 @@ class Space
 
   class << self
     def create(user_id, name, bedrooms, description, prices_per_night)
-      fail 'User not logged in' if user_id.nil?
+      fail 'User not logged in' if (user_id.nil? || invalid_id?(user_id))
       add_to_table(user_id, name, bedrooms, description, prices_per_night)
     end
 
@@ -31,7 +28,8 @@ class Space
     end
 
     def create_object(space)
-      Space.new(space['name'], space['bedrooms'], find_owner_username(space['fk_user']), space['description'], space['prices_per_night'])
+      Space.new(space['name'], space['bedrooms'], space['id'],
+        find_owner_username(space['fk_user']), space['description'], space['prices_per_night'])
     end
 
     def find_owner_username(host_id)
@@ -39,6 +37,10 @@ class Space
     end
 
     private
+
+    def invalid_id?(user_id)
+      (connection.query("SELECT * FROM users WHERE id = '#{user_id}'")).first.nil?
+    end
 
     def add_to_table(user_id, name, bedrooms, description, prices_per_night)
       connection.exec_params("INSERT INTO spaces (name,bedrooms,fk_user,description,prices_per_night) 
@@ -50,6 +52,4 @@ class Space
     end
   end
 end
-
-
   

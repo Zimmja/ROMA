@@ -13,27 +13,27 @@ current user: <%= @username %>
 <% if @username != 'none' %>
   <a href="/logout">Logout</a>
 <% else %>
+<div style='border: 3px solid red'>
+  <a href="/login/host"> Login as Host </a> 
+  <a href="/signup/host"> Like to sign up as Host?</a>
+</div>
 
-  <h2> Existing user? </h2>
-  <form  action="/spaces" method = "post">
-    <label for="username"> Username: </label><br>
-    <input type="text" id="username" name="username"><br>
-    <label for="pwd">Password:</label><br>
-    <input type="password" id="pwd" name="pwd">
-    <input type="submit" value="Submit">
-  </form>
-
-  <a href="/signup">New User?</a>
+<div style="border: 3px solid blue;">
+<a href="/login/guest"> Login as Guest </a>
+<a href="/signup/guest"> Like to sign up as Guest? </a> 
+</div>
 
 <% end %>
 
+<<h3> Available Spaces </h3>
 <table style="width:100%">
   <tr>
     <th>Name</th>
     <th>Bedrooms</th>
     <th>Description</th>
-    <th>Prices-per-Night </th>
-    <th> Host Name </th> 
+    <th>Prices-per-Night</th>
+    <th>Host Name</th>
+    <th>Book</th>
   </tr>
   <% @spaces.each do |space| %>
   <tr>
@@ -42,13 +42,13 @@ current user: <%= @username %>
     <td> <%= space.description %> </td>
     <td> <%= space.prices_per_night%> </td>
     <td> <%= space.hostname%> </td>
+    <td> <form method="post" action=<%= "/booking" %>>
+      <input type="hidden" name="id" value=<%= space.id %>>
+      <input type="submit" name=<%= "#{space.name}_button" %> value="Make a booking">
+     </form> </td>
   </tr>
   <% end %>
 </table>
-
-
-
-
-                                    
-</body>
+ 
+  </body>
 </html>
