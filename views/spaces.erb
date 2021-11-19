@@ -1,19 +1,26 @@
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/spaces.css">
+    <style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+</head>
+
+<div class="type">
 <h1> Welcome <%= @username%> </h1>
 
- <h3> Fill out this form to add a new space </h3>
+ <h3> Fill out this form to add a new space </h3><br>
 <form action="/host/spaces/add" method="post">
   Name: <input type="text" name="name">
   Bedrooms: <input type="text" name="bedrooms">
   Description: <input type="text" name="description">
   Prices-per-Night <input type="text" name="prices_per_night">
   <input type="submit" value="enter">
-</form>
+</form><br>
 
+<div class="table_box">
 <table style="width:100%">
   <tr>
     <th>Name</th>
@@ -31,8 +38,8 @@ table, th, td {
       </tr>
     <% end %>
   <% end %>
-  
 </table>
+</div>
 
-<a href='/'> Back to homepage </a>
-
+<br><a href='/' style='color: white;'> Back to homepage </a>
+</div>
