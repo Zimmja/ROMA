@@ -29,19 +29,14 @@
 
 <h1> Welcome to ROMA BnB </h1>
 <div id="white_box">
-<br><h3>Current user: <%= @username %></h3>
-
-<br><a href="/logout" class="logged_in">Logout</a>
-
-<div>
-  <a href="/login/host" class="logged_out"> Login as Host </a> 
-  <br><a href="/signup/host" class="logged_out"> Like to sign up as Host?</a>
-</div>
-
-<div>
-  <a href="/login/guest" class="logged_out"> Login as Guest </a>
-  <br><a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
-</div>
+<table style="width:100%; font-size: 14px;">
+    <th>Current user: <%= @username %></th>
+    <th><a href="/logout" class="logged_in">Logout</a></th>
+    <th><a href="/login/host" class="logged_out"> Login as Host </a></th>
+    <th><a href="/signup/host" class="logged_out"> Sign up as Host?</a></th>
+    <th><a href="/login/guest" class="logged_out"> Login as Guest </a></th>
+    <th><a href="/signup/guest" class="logged_out"> Sign up as Guest? </a> </th>
+</table>
 
 <%if @new_host == true %>
 <a href="/host/spaces">Add a space</a><br>
