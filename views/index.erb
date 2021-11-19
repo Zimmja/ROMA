@@ -22,30 +22,23 @@
     <% end %>
   }
 
-  #white_box {
-    background-color:rgba(255,255,255,0.85);
-    margin: auto;
-    width: 70%;
-    padding: 15px;
-    border-radius: 10px;
-  }
   </style>
 </head>
 
 <body>
 
-<div id="white_box">
 <h1> Welcome to ROMA BnB </h1>
-Current user: <%= @username %>
+<div id="white_box">
+<br><h3>Current user: <%= @username %></h3>
 
 <br><a href="/logout" class="logged_in">Logout</a>
 
-<div style='border: 3px solid red'>
+<div>
   <a href="/login/host" class="logged_out"> Login as Host </a> 
   <br><a href="/signup/host" class="logged_out"> Like to sign up as Host?</a>
 </div>
 
-<div style="border: 3px solid blue;">
+<div>
   <a href="/login/guest" class="logged_out"> Login as Guest </a>
   <br><a href="/signup/guest" class="logged_out"> Like to sign up as Guest? </a> 
 </div>

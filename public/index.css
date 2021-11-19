@@ -9,10 +9,12 @@ html {
       url("https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png"),
     url("https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png");
   background-repeat: repeat-x;
-  background-position: 0 20%, 0 100%, 0 50%, 0 50%, 0 25%;
-  background-size: 2500px, 1000px, 500px 0px, 50px, 1000px 400px;
-  animation: 60s para infinite linear;
+  background-position: 0 20%, 0 23%, 0 50%, 0 50%, 0 25%;
+  background-size: 2500px, 2400px, 500px 0px, 50px, 1000px 400px;
+  animation: 120s para infinite linear;
   text-align: center;
+  display: table;
+  margin: auto;
 }
 
 @keyframes para {
@@ -21,21 +23,27 @@ html {
   }
 }
 
-/* body {
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0 0;
   text-align: center;
-  background-color: cadetblue;
-} */
+  display: table-cell;
+  vertical-align: middle;
+}
 
 title {
   background-color: darkblue;
 }
 
 h1 {
+  margin-top: 150px;
   text-transform: uppercase;
   text-align: center;
   font-family: verdana;
   font-weight: 700;
-  color: rgb(68, 94, 245);
+  font-size: 40px;
+  color: rgb(117, 221, 216);
   text-shadow: 1px 1px 1px cadetblue, 1px 2px 1px cadetblue,
     1px 3px 1px cadetblue, 1px 4px 1px cadetblue, 1px 5px 1px #919191,
     1px 6px 1px #919191, 1px 7px 1px #919191, 1px 8px 1px #919191,
@@ -63,4 +71,14 @@ h3 {
   border: 30px solid white;
   border-style: double;
   text-align: center;
+}
+
+#white_box {
+  background-color:rgba(255,255,255,0.85);
+  font-family: verdana;
+  font-size: 14px;
+  margin: 15px auto;
+  width: 90%;
+  padding: 15px;
+  border-radius: 10px;
 }
