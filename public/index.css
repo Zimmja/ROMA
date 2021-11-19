@@ -1,4 +1,4 @@
-body {
+html {
   height: 100%;
   max-height: 600px;
   width: 1000px;
@@ -32,6 +32,7 @@ title {
 
 h1 {
   text-transform: uppercase;
+  text-align: center;
   font-family: verdana;
   font-weight: 700;
   color: rgb(68, 94, 245);
@@ -50,4 +51,16 @@ form {
 
 h2 {
   color: cyan;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+}
+
+.touch_up {
+  color: aliceblue;
+  border: 30px solid white;
+  border-style: double;
+  text-align: center;
 }
