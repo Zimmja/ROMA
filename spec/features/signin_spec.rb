@@ -1,7 +1,7 @@
 feature 'Sign-up' do
   scenario 'Users can sign-up' do
     visit('/')
-    click_link('Sign up')
+    click_link('Like to sign up as Host?')
     fill_in 'username', with: 'Clint Barton'
     fill_in 'pwd', with: 'hawkeye'
     fill_in 'email', with: 'clint@thenest.com'
@@ -13,7 +13,7 @@ end
 feature 'Login' do
   scenario 'Users can sign-up' do
     login_with_tony
-    expect(page).to have_content 'user: Tony Stark'
+    expect(page).to have_content 'Welcome Tony Stark'
   end
 end
  

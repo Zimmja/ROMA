@@ -1,10 +1,5 @@
-# frozen_string_literal: true
-
-require 'pg'
-
-# This manages the sign-up process and the properties of the active user
-class ActiveUser
-  @@user_id = nil
+class Guest
+  @@guest_id = nil
 
   DATABASE = 'airbnb'
 
@@ -15,26 +10,26 @@ class ActiveUser
     end
 
     def id
-      @@user_id
+      @@guest_id
     end
 
     def request_login(username = nil, password = nil)
       return false if (username.nil? || password.nil?)
-      user_id = find_user_id(username, password)
-      user_id.to_i < 0 ? false : login(user_id)
+      guest_id = find_user_id(username, password)
+      guest_id.to_i < 0 ? false : login(guest_id)
     end
 
     def logout
-      @@user_id = nil
+      @@guest_id = nil
     end
 
-    def login(user_id)
-      @@user_id = user_id
+    def login(guest_id)
+      @@guest_id = guest_id
     end
 
     def username
-      return 'none' if @@user_id.nil?
-      connection.exec("SELECT * FROM users WHERE id = #{@@user_id};").first['username']
+      return 'none' if @@guest_id.nil?
+      connection.query("SELECT * FROM users WHERE id = #{@@guest_id};").first['username']
     end
 
     private

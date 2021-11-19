@@ -1,3 +1,34 @@
-Name: <%= @space.name %>
-Bedrooms: <%= @space.bedrooms %>
-Host: <%= @space.hostname %>
+<h2> Make a booking for: <%= @space.name %> </h2>
+Description: <%= @space.description %><br>
+Bedrooms: <%= @space.bedrooms %><br>
+<br>
+Price-per-night: <%= @space.prices_per_night %><br>
+Host: <%= @space.hostname %><br>
+<br>
+<form method="post" action=<%= "/booking/complete" %>>
+  <input type="hidden" name="spaceid" value=<%= @space.id %>>
+  <input type="hidden" name="hostid" value=<%= @space.host_id %>>
+  <label for="start">Start date:</label>
+    <input type="date" name="startdate"
+          value="2021-11-21"
+          min="2021-11-21" max="2030-12-31">
+  <br><label for="start">For how many nights?</label>
+    <select name="days">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+    </select>
+  <br><br><input type="submit" name='book' value="Book">
+</form>
+<a href="/">Cancel</a><br>

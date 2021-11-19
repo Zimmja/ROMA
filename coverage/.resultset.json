@@ -1,53 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-
-      "/Users/do/ROMA/ROMA/spec/activeuser_spec.rb": {
-
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/activespace_spec.rb": {
         "lines": [
           null,
           null,
           1,
           null,
           1,
+          1,
+          4,
+          1,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/lib/activespace.rb": {
-        "lines": [
+          2,
           null,
           1,
           1,
-          null,
-          null,
           1,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
           null,
           null,
           null
@@ -100,11 +74,10 @@
           null,
           null,
           null,
-          null,
           null
         ]
       },
-      "/Users/do/ROMA/ROMA/spec/features/features_add_spec.rb": {
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/features_add_spec.rb": {
         "lines": [
           1,
           null,
@@ -125,7 +98,6 @@
       },
       "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/signin_spec.rb": {
         "lines": [
-          null,
           1,
           1,
           1,
@@ -137,13 +109,7 @@
           1,
           null,
           null,
-
-          null
-        ]
-      },
-      "/Users/do/ROMA/ROMA/spec/features/signin_spec.rb": {
-        "lines": [
-
+          null,
           1,
           1,
           1,
@@ -153,7 +119,7 @@
           null
         ]
       },
-      "/Users/do/ROMA/ROMA/spec/spaces_spec.rb": {
+      "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/spaces_spec.rb": {
         "lines": [
           null,
           null,
@@ -162,25 +128,29 @@
           null,
           1,
           1,
+          6,
           null,
           1,
           1,
           2,
           null,
           null,
+          null,
           1,
           2,
           null,
           null,
+          null,
           1,
-          4,
-          4,
+          1,
+          2,
+          2,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1637190368
+    "timestamp": 1637271450
   }
 }

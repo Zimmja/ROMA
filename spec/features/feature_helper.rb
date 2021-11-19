@@ -1,6 +1,6 @@
 def login_with_tony
   visit('/')
-  click_link('Login')
+  click_link('Login as Host')
   fill_in 'username', with: 'Tony Stark'
   fill_in 'pwd', with: 'ironman'
   click_button('Submit')
