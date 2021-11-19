@@ -3,32 +3,18 @@
     <link rel="stylesheet" type="text/css" href="/signup.css">
 </head>
 <body>
-  <br>
-  <br>
-  
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  
-  <br>
-  <br>
-  <br>
-  <div style='border: 3px dashed red'>
+  <div class='type' style="margin-top: 15%;">
 
   <%if @new_host == true %>
     <h2> New Host? Sign up: </h2>
     <form action="/signup/host/new" method = "post">
-      <label for="username">Username:</label><br>
+      <br><label for="username">Username:</label><br>
       <input type="text" id="username" name="username"><br>
-      <label for="pwd">Password:</label><br>
+      <br><label for="pwd">Password:</label><br>
       <input type="password" id="pwd" name="pwd">
-      <label for="email">Enter your email:</label>
+      <br><label for="email">Enter your email:</label>
       <input type="text" id="email" name="email">
-      <input type="submit" value="Submit">
+      <br><input type="submit" value="Submit">
     </form>
   <%else%>
       <h2> New Guest? Sign up: </h2>
