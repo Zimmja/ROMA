@@ -54,12 +54,12 @@ h2 {
 }
 
 h3 {
-  color: white;
+  /* color: white; */
   text-align: center;
 }
 
 .touch_up {
-  color: aliceblue;
+  /* color: aliceblue; */
   border: 30px solid white;
   border-style: double;
   text-align: center;
