@@ -99,21 +99,21 @@
       "/Users/zimmja/Desktop/MAKERS/Week05/ROMA/spec/features/signin_spec.rb": {
         "lines": [
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -151,6 +151,6 @@
         ]
       }
     },
-    "timestamp": 1637256099
+    "timestamp": 1637271450
   }
 }

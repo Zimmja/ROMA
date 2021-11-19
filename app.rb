@@ -20,6 +20,7 @@ class Roma < Sinatra::Base
     else
       @username = Guest.username
     end
+    @new_host = (ActiveUser.id.to_i > 0)
     @spaces = Space.all_objects
     erb(:index)
   end
@@ -83,7 +84,7 @@ class Roma < Sinatra::Base
   end
 
   post '/booking/complete' do
-    ActiveSpace.book_space(params[:spaceid], Guest.id, params[:hostid], params[:startdate], params[:days])
+    ActiveSpace.book_space(params[:spaceid], [ActiveUser.id.to_i, Guest.id.to_i].max, params[:hostid], params[:startdate], params[:days])
     redirect to '/'
   end
 
